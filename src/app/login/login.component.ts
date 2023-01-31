@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class LoginComponent{
   data="your perfect banking partner"
   inputplaceholder="Account number"
-  acno=''
   //  or  acno:any
+  acno=''
   psw=''
 
   userDetails:any={
@@ -22,10 +22,27 @@ export class LoginComponent{
 
 
 constructor(){ }
-login(a:any, b:any){
-  // console.log(a.value)
-  var acnum=a.value
-  var psw=b.value
+// login(a:any, b:any){
+//   // console.log(a.value)
+//   var acnum=a.value
+//   var psw=b.value
+//   var userDetails=this.userDetails
+//   if(acnum in userDetails){
+//     if(psw==userDetails[acnum]["password"]){
+//       alert("login success")
+//     }
+//     else{
+//       alert("password incorrect")
+//     }
+
+//   }
+//   else{
+//     alert("acno incorrect or not registered yet")
+//   }
+// }
+login(){
+  var acnum=this.acno
+  var psw=this.psw
   var userDetails=this.userDetails
   if(acnum in userDetails){
     if(psw==userDetails[acnum]["password"]){
@@ -39,24 +56,10 @@ login(a:any, b:any){
   else{
     alert("acno incorrect or not registered yet")
   }
-  // var acnum=this.acno
-  // var psw=this.psw
-  // var userDetails=this.userDetails
-  // if(acnum in userDetails){
-  //   if(psw==userDetails[acnum]["password"]){
-  //     alert("login")
-  //   }
-  //   else{
-  //     alert("password incorrect")
-  //   }
+   //alert('login clicked')
+  }
 
-  // }
-  // else{
-  //   alert("acno incorrect or not registered yet")
-  // }
-  //  alert('login clicked')
 
-}
 // acnoChange(event:any){
   
   // this.acno=event.target.value
