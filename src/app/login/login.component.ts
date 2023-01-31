@@ -22,21 +22,52 @@ export class LoginComponent{
 
 
 constructor(){ }
-login(){
-  alert('login clicked')
+login(a:any, b:any){
+  // console.log(a.value)
+  var acnum=a.value
+  var psw=b.value
+  var userDetails=this.userDetails
+  if(acnum in userDetails){
+    if(psw==userDetails[acnum]["password"]){
+      alert("login success")
+    }
+    else{
+      alert("password incorrect")
+    }
+
+  }
+  else{
+    alert("acno incorrect or not registered yet")
+  }
+  // var acnum=this.acno
+  // var psw=this.psw
+  // var userDetails=this.userDetails
+  // if(acnum in userDetails){
+  //   if(psw==userDetails[acnum]["password"]){
+  //     alert("login")
+  //   }
+  //   else{
+  //     alert("password incorrect")
+  //   }
+
+  // }
+  // else{
+  //   alert("acno incorrect or not registered yet")
+  // }
+  //  alert('login clicked')
 
 }
-acnoChange(event:any){
+// acnoChange(event:any){
   
-  this.acno=event.target.value
-  console.log(this.acno);
+  // this.acno=event.target.value
+  // console.log(this.acno);
   
-}
-pswrdChange(event:any){
-  this.psw=event.target.value
-  console.log(this.psw);
+// }
+// pswrdChange(event:any){
+//   this.psw=event.target.value
+//   // console.log(this.psw);
   
   
 
-}
+// }
 }
