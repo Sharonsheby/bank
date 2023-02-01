@@ -5,13 +5,19 @@
     <h1>Sign in</h1>
     <form action="">
         <div class="p-3 mt-2">
-            <input [(ngModel)]="acno" type="accountnume" name="acnum1" id="acid" [placeholder]="inputplaceholder"  class="form-control" >
+            <input [(ngModel)]="acno" type="accountnume" name="acnum1" id="acid" [placeholder]="inputplaceholder"
+                class="form-control">
         </div>
         <div class="p-3 mt-2">
-            <input [(ngModel)]="psw" type="accountnume" name="oaswrd1" id="psw1" placeholder="Password" class="form-control" >
+            <input [(ngModel)]="psw" type="accountnume" name="oaswrd1" id="psw1" placeholder="Password"
+                class="form-control">
         </div>
         <div>
             <button type="button" (click)="login()" class="btn btn-info">Login</button>
+        </div>
+        <div class="text-center text-white">
+            <strong> Not registered ? </strong> <a style="text-decoration: none ; color:rgb(214, 45, 45);"
+                routerLink="register">Register</a>
         </div>
     </form>
 </div>
