@@ -3,7 +3,7 @@
 <h2 class="ms-3 p-2 mt-5" style="font-size: 35px;">{{data}}</h2>
 <div class="container w-50 border border-white text-center p-5 mt-5 bg-black">
     <h1>Sign in</h1>
-    <form action="">
+    <form action="" (ngSubmit)="login()" >
         <div class="p-3 mt-2">
             <input [(ngModel)]="acno" type="accountnume" name="acnum1" id="acid" [placeholder]="inputplaceholder"
                 class="form-control">
@@ -13,11 +13,11 @@
                 class="form-control">
         </div>
         <div>
-            <button type="button" (click)="login()" class="btn btn-info">Login</button>
+            <button type="submit" class="btn btn-info">Login</button>
         </div>
         <div class="text-center text-white">
             <strong> Not registered ? </strong> <a style="text-decoration: none ; color:rgb(214, 45, 45);"
-                routerLink="register">Register</a>
+                routerLink="register"> Register</a>
         </div>
     </form>
 </div>
