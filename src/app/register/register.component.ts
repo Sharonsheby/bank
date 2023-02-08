@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -8,27 +9,39 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  uname=''
-  acnum=''
-  pwd=''
+ 
+  constructor(private ds:DataService,private router:Router,private fb:FormBuilder){}
+ 
+  // create reactive form of register form
+  registerForm=this.fb.group({
+    
+    uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]],
+    acnum:['',[Validators.required,Validators.pattern('[0-9]+')]],
+    pwd:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]+')]]
 
-  constructor(private ds:DataService,private router:Router){}
+  })
 
   register(){
     // alert('register')
-   let userDetails= this.ds.userDetails
-   var uname=this.uname
-   var acnum=this.acnum
-   var pwd=this.pwd
+  //  let userDetails= this.ds.userDetails
+  var uname=this.registerForm.value.uname
+  var acnum=this.registerForm.value.acnum
+   var pwd=this.registerForm.value.pwd
+  if(this.registerForm.valid){
   //  console.log(username,acnum,pwd);
-  const result=this.ds.register(uname,acnum,pwd)
-  if(result){
-    alert("registered")
-    this.router.navigateByUrl("")
-  }
-  else{
-    alert("acno already present")
-  }
+       const result=this.ds.register(uname,acnum,pwd)
+        if(result){
+          alert("registered")
+          this.router.navigateByUrl("")
+        }
+        else{
+          alert("acno already present")
+        }
+}
+    else{
+      alert('invalid form')
+
+    }
    
   }
 
