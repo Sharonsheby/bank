@@ -3,13 +3,13 @@
 <h2 class="ms-3 p-2 mt-5" style="font-size: 35px;">{{data}}</h2>
 <div class="container w-50 border border-white text-center p-5 mt-5 bg-black">
     <h1>Sign in</h1>
-    <form action="" (ngSubmit)="login()" >
+    <form action=""  [formGroup]="loginForm" (ngSubmit)="login()" >
         <div class="p-3 mt-2">
-            <input [(ngModel)]="acno" type="accountnume" name="acnum1" id="acid" [placeholder]="inputplaceholder"
+            <input formControlName="acno" type="accountnume" name="acnum1" id="acid" [placeholder]="inputplaceholder"
                 class="form-control">
         </div>
         <div class="p-3 mt-2">
-            <input [(ngModel)]="psw" type="password" name="oaswrd1" id="psw1" placeholder="Password"
+            <input formControlName="psw" type="password" name="oaswrd1" id="psw1" placeholder="Password"
                 class="form-control">
         </div>
         <div>
