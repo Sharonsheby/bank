@@ -1,55 +1,66 @@
 <h1>Welcome {{user}}</h1>
-<div class=" container w-25 ms-5 mt-3 rounded-pill text-center" style="background-color: yellow;">
-    <a style=" text-decoration: none ;color: #000;"routerLink="/transaction">View Transaction History</a>
+
+
+<div class="text-end me-2 mt-2">
+    <button class="btn btn-danger">Delete Account</button>
 </div>
+<div class="text-start ms-3 mt-2">
+    <button class="btn btn-success">Logout</button>
+</div>
+
+
+<div class=" container w-25 rounded-pill text-center" style="background-color: yellow;">
+    <a style=" text-decoration: none ;color: #000;" routerLink="/transaction">View Transaction History</a>
+</div>
+
 
 <div class="container border border-white text-center p-5 mt-3 " style="background-color:rgb(244, 235, 235) ;">
     <div class="row">
-       <div class="container col-6 " style="background-color: rgb(68, 65, 62);">
-    <h1 class="text-dark ">Deposit</h1>
-    <form action="" [formGroup]="depositForm">
-        
-        <div class="p-3 mt-2">
-            <input type="accountnume" formControlName="acno" name="acnum1" id="acid1" placeholder=" Enter Account Number"
-                class="form-control">
-        </div>
-        <div class="p-3 mt-2">
-            <input  type="password" formControlName="psw" name="paswrd1" id="psw1" placeholder=" Enter Password"
-                class="form-control">
-        </div>
-        <div class="p-3 mt-2">
-            <input  type="text" formControlName="amnt" name="amnt1" id="amouid1" placeholder="Amount"
-                class="form-control">
-        </div>
-        <div>
-            <button type="button" (click)="deposit()"class="btn btn-outline-warning text-dark">Deposit</button>
-        </div>
-        
-    </form>
-</div>
-<div class="container col-6"  style="background-color:rgb(111, 92, 92) ;">
-    <h1 class="text-dark ">Withdraw</h1>
-    <form action="" [formGroup]="withdrawForm">
-        
-        <div class="p-3 mt-2">
-            <input type="accountnume" formControlName="acno1" name="acnum2" id="acid2" placeholder=" Enter Account Number"
-                class="form-control">
-        </div>
-        <div class="p-3 mt-2">
-            <input  type="password" formControlName="psw1" name="paswrd2" id="psw2" placeholder=" Enter Password"
-                class="form-control">
-        </div>
-        <div class="p-3 mt-2">
-            <input  type="text" formControlName="amnt1" name="amnt2" id="amouid2" placeholder="Amount"
-                class="form-control">
-        </div>
-        <div>
-            <button type="button" (click)="withdraw()" class="btn btn-outline-warning text-dark">Withdraw</button>
-        </div>
-        
-    </form>
+        <div class="container col-6 " style="background-color: rgb(68, 65, 62);">
+            <h1 class="text-dark ">Deposit</h1>
+            <form action="" [formGroup]="depositForm">
 
-</div>
-</div>
-</div>
+                <div class="p-3 mt-2">
+                    <input type="accountnume" formControlName="acno" name="acnum1" id="acid1"
+                        placeholder=" Enter Account Number" class="form-control">
+                </div>
+                <div class="p-3 mt-2">
+                    <input type="password" formControlName="psw" name="paswrd1" id="psw1" placeholder=" Enter Password"
+                        class="form-control">
+                </div>
+                <div class="p-3 mt-2">
+                    <input type="text" formControlName="amnt" name="amnt1" id="amouid1" placeholder="Amount"
+                        class="form-control">
+                </div>
+                <div>
+                    <button type="button" (click)="deposit()" class="btn btn-outline-warning text-dark">Deposit</button>
+                </div>
 
+            </form>
+        </div>
+        <div class="container col-6" style="background-color:rgb(111, 92, 92) ;">
+            <h1 class="text-dark ">Withdraw</h1>
+            <form action="" [formGroup]="withdrawForm">
+
+                <div class="p-3 mt-2">
+                    <input type="accountnume" formControlName="acno1" name="acnum2" id="acid2"
+                        placeholder=" Enter Account Number" class="form-control">
+                </div>
+                <div class="p-3 mt-2">
+                    <input type="password" formControlName="psw1" name="paswrd2" id="psw2" placeholder=" Enter Password"
+                        class="form-control">
+                </div>
+                <div class="p-3 mt-2">
+                    <input type="text" formControlName="amnt1" name="amnt2" id="amouid2" placeholder="Amount"
+                        class="form-control">
+                </div>
+                <div>
+                    <button type="button" (click)="withdraw()"
+                        class="btn btn-outline-warning text-dark">Withdraw</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
