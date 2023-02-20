@@ -12,10 +12,13 @@ export class DashboardComponent {
 
   user:any
   acno:any
-
+  datedetails:any
+  
   constructor(private ds:DataService,private fb:FormBuilder,private router:Router){
-    
+
     this.user=this.ds.currentUser
+    // access date
+    this.datedetails=new Date()
     
   }
   depositForm=this.fb.group({
@@ -78,6 +81,9 @@ export class DashboardComponent {
   }
   deleteParent(){
    this.acno=JSON.parse(localStorage.getItem("currentAcno") || "")
+  }
+  cancel(){
+    this.acno=''
   }
 
 }
